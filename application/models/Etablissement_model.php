@@ -13,7 +13,7 @@ class Etablissement_model extends CI_Model{
 
     public function read($id)
     {
-        return $this->db->get_where($this->table,array('id'=>$id));
+        return $this->db->get_where($this->table,array('id'=>$id))->row();
     }
 
     public function update($champs,$donnee)
