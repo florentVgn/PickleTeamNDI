@@ -1,0 +1,403 @@
+body{
+	padding:0;
+	margin:0;
+
+	background-color:rgba(20,20,20,0.15);
+
+	background: url(../img/1.jpg) no-repeat center fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+header{
+	position:fixed;
+	top:0;
+	left:0;
+
+	width:100%;
+	height:50px;
+	background-color:rgba(20,20,20,1);
+
+	box-shadow:0px 0px 10px rgba(20,20,20,0.74);
+}
+
+h2{
+	font-family: 'Montserrat', sans-serif;
+	width:90%;
+	text-align:left;
+	margin-right:auto;
+	margin-left:auto;
+	font-size:1.8em;
+
+	color:white;
+	text-shadow:0px 0px 10px rgba(20,20,20,0.85);
+}
+
+a.menu{
+	padding-right:10px;
+	padding-left:10px;
+	float:left;
+	text-decoration:none;
+	font-family: 'Montserrat', sans-serif;
+	color:white;
+	height:100%;
+	margin-left:50px;
+	line-height:2.8;
+
+	-webkit-transition: all 200ms linear;
+	    -moz-transition: all 200ms linear;
+	    -o-transition: all 200ms linear;
+	    -ms-transition: all 200ms linear;
+	    transition: all 200ms linear;
+}
+
+a.active{
+	background-color:white;
+	color:black;
+
+}
+
+a.menu:hover{
+	background-color:white;
+	color:black;
+
+	-webkit-transition: all 200ms linear;
+	    -moz-transition: all 200ms linear;
+	    -o-transition: all 200ms linear;
+	    -ms-transition: all 200ms linear;
+	    transition: all 200ms linear;
+}
+
+a.right{
+	float:right;
+	margin-right:10px;
+}
+
+#title{
+	text-shadow:0px 0px 10px rgba(20,20,20,0.85);
+
+	color:white;
+	font-size:1.4em;
+	font-family: 'Happy Monkey', sans-serif;
+	width:100%;
+	text-align:center;
+	margin-top:85px;
+	margin-bottom:10px;
+}
+
+#title button{
+	width:40%;
+	padding:4px;
+
+	padding-top:8px;
+	padding-bottom:8px;
+
+	border:solid 0px;
+	border-radius:15px;
+	margin-top:0px;
+	margin-bottom:20px;
+	font-family: 'Montserrat', sans-serif;
+	color:white;
+
+	background-color:#ED8C2B;
+}
+
+#title button:hover{
+	text-shadow:0px 0px 5px rgba(20,20,20,0.84);
+}
+
+span.beta{
+	display:block;
+	padding-left:5px;
+	font-size:0.3em;
+}
+
+#slider{
+	text-align:center;
+	width:100%;
+	height:450px;
+	overflow:hidden;
+
+	box-shadow:0px 0px 10px rgba(20,20,20,0.74);
+}
+
+#slider img{
+	height:450px;
+}
+
+#content{
+	width:90%;
+	margin-right:auto;
+	margin-left:auto;
+	text-align:center;
+
+
+	padding-top:1px;
+	padding-bottom:30px;
+	margin-bottom:50px;
+}
+
+#main{
+
+	display:inline-block;
+	width:70%;
+	/*box-shadow:0px 0px 10px rgba(20,20,20,0.87);*/
+	background-color:rgba(255,255,255,0.4);
+	border-radius:10px;
+	vertical-align: top;
+	font-family: 'Happy Monkey', sans-serif;
+
+	padding-bottom:20px;
+	margin-bottom:20px;
+}
+
+#who{
+	vertical-align: top;
+	display:inline-block;
+	width:27%;
+	background-color:white;
+	background-color:rgba(255,255,255,0.4);
+	border-radius:10px;
+
+	font-family: 'Happy Monkey', sans-serif;	
+}
+
+#main article{
+	overflow:hidden;
+	border-radius:0px;
+
+	box-shadow:0px 0px 15px rgba(20,20,20,0.3);
+	text-align:right;
+	width:90%;
+	margin-top:5px;
+
+	padding-bottom:10px;
+
+	margin-top:15px;
+
+	margin-right:auto;
+	margin-left:auto;
+
+	font-size:1.01em;
+	background-color:rgba(10,10,10,0.94);
+	color:white;
+	font-family: 'Montserrat', cursive;
+}
+
+#who article{
+	font-size:1.01em;
+	overflow:hidden;
+	border-radius:0px;
+
+	text-align:right;
+	width:100%;
+	margin-top:5px;
+
+	padding-bottom:10px;
+
+	margin-top:15px;
+
+	font-size:0.92em;
+}
+
+article h2{
+	background-color:rgba(255,255,255,0.16);
+	padding-top:5px;
+	padding-bottom:5px;
+	margin-top:0px;
+	padding-left:1.3%;
+	width:99%;
+	text-align:left;
+	font-family: 'Montserrat', sans-serif;
+	font-size:1.40em;
+}
+
+#who article h2{
+	text-align:center;
+}
+
+#who article p{
+	font-family: 'Montserrat', sans-serif;
+	text-align:center;
+	background-color:#ED8C2B;
+	color:white;
+	margin-right:auto;
+	margin-left:auto;
+
+	padding-top:6px;
+	padding-bottom:6px;
+}
+
+article p{	
+	padding-left:1.3%;
+	width:95%;
+	text-align:left;	
+	font-size:0.93em;
+}
+
+p.intro{
+	text-align:justify;
+	margin-right:auto;
+	margin-left:auto;
+	width:90%;
+	font-size:1em;
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+.date{
+	font-family:'Montserrat', sans-serif;
+	font-size:0.6em;
+
+	color:white;
+	margin-left:10px;
+	opacity:0.4;
+}
+
+article button{
+	width:35%;
+	padding:4px;
+	margin-right:0px;
+	padding-top:8px;
+	padding-bottom:8px;
+	border:solid 0px;
+	border-radius:0px;
+	color:white;
+	background-color:#ED8C2B;
+
+	display:inline-block;
+	font-family:'Montserrat', sans-serif;
+}
+
+article button.share{
+	background-color:rgba(255,57,10,0.85);
+	margin-right:1%;
+	width:20%;
+}
+
+footer{
+	box-shadow:0px 0px 10px rgba(20,20,20,0.3);
+	padding-top:4px;
+	padding-bottom:2px;
+	width:100%;
+	text-align:center;
+	background-color:rgba(20,20,20,0.95);
+	height:20px;
+
+	position:fixed;
+	bottom:0;
+	left:0;
+
+	font-size:0.85em;
+	color:white;
+	font-family:'Montserrat', sans-serif;
+}
+
+footer a{
+	text-decoration:none;
+	color:#ED8C2B;
+}
+
+#main table{
+	border-collapse: collapse;
+	border:solid 0px;
+	margin-top:10px;
+	width:90%;
+
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#main tr{
+	padding-bottom:5px;
+	margin:0;
+}
+
+.last{
+	color:white;
+	border-bottom:solid 3px rgba(20,20,20,0.6);
+	box-shadow:0px 0px 5px rgba(20,20,20,0.2);
+	background-color:rgba(20,20,20,1);
+}
+
+tr.head{
+	background-color:#ED8C2B;
+	color:black;
+}
+
+
+#main td{
+	margin:0;
+	width:40%;
+	text-align:left;
+	padding-left:10px;
+
+	padding-top:10px;
+	padding-bottom:4px;
+}
+
+td.head{
+	padding-top:10px !important;
+	padding-bottom:10px;
+}
+
+table a{
+	color:white;
+	text-decoration:none;
+}
+
+table a:hover{
+	text-decoration:underline;
+}
+
+h3{
+	text-align:left;
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	opacity:0.8;
+}
+
+.tablelegend{
+	width:90%;
+	text-align:left;
+
+	margin-left:auto;
+	margin-right:auto;
+	font-family:'Montserrat', sans-serif;
+}
+
+
+p.bottom{
+	font-size:0.9em;
+	margin-top:100px;
+}
+
+button.join{
+	width:30%;
+	border-radius:5px;
+	margin-right:10px;
+}
+
+.recherche{
+	width:40%;
+	padding:1%;
+	border-radius:5px;
+	border:solid 0px transparent;
+}
+
+article.first{
+	text-align:left !important;
+	padding-top:10px;
+	padding-left:10px;
+}
+
+button:hover{
+	cursor:pointer;
+}
+
+.big{
+	width:90% !important;
+	margin-left:auto;
+	margin-right:auto;
+}
