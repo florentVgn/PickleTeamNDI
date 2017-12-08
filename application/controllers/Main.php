@@ -1,5 +1,4 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Main extends CI_Controller
 {
     public function index(){
@@ -7,7 +6,10 @@ class Main extends CI_Controller
     	$data['head']['seo']['description'] = "Le moyen sûr de rentrer après une soirée";
     	$data['head']['seo']['keywords'] = "soirée, sam";
     	$data['head']['title'] = "Accueil";
-
+        $data['head']['style'] = base_url("assets/css/style.css");
+        if(!empty($this->input->get()['alt']))
+            if($this->input->get()['alt'] == "alt")
+                $data['head']['style'] = base_url("assets/css/moche.css");
         $this->load->view('accueil', $data);
     }
 
@@ -33,7 +35,7 @@ class Main extends CI_Controller
 
             $this->load->model(['evenement_model', 'adresse_model']);
 
-            $newAdresse = array( 
+            $newAdresse = array(
                 'adresse' => $this->input->post("rue_adresse_event"),
                 'cp' => $this->input->post("cp_adresse_event"),
                 'ville' => $this->input->post("ville_adresse_event")
@@ -70,7 +72,7 @@ class Main extends CI_Controller
             $mailPHP->CharSet = 'UTF-8';
             $mailPHP->setFrom("noreply@adopteunsam.com","AdopteUnSAM");
             $mailPHP->addAddress($this->input->post("mail"));
-            $mailPHP->Subject = 'Confirmation de la création de votre événement';  
+            $mailPHP->Subject = 'Confirmation de la création de votre événement';
 
             $mailPHP->Body = $this->load->view("mail_event", $dataMail, TRUE);
 
@@ -138,7 +140,7 @@ class Main extends CI_Controller
 
         $data["menu"]["active"] = "none";
 
-        $this->output->set_status_header('404'); 
+        $this->output->set_status_header('404');
         $this->load->view('modules/404', $data);
     }
 }

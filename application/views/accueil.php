@@ -26,7 +26,7 @@
 			<article>
 				<h2>Trouvez un véhicule facilement</h2>
 				<button class="join big">Scanner un QR CODE</button>
-			</article>	
+			</article>
 		</div>
 	</div>
 
