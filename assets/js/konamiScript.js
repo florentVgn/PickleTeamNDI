@@ -6,13 +6,13 @@ window.onkeyup = function(e) {
 
     keylog += key.toString();
 
-    document.getElementById('test').innerHTML = 'keylog  = '+keylog;
     var lastTwenty = keylog.substr(keylog.length - 20);
     console.log(lastTwenty);
     if(lastTwenty == konami_code)
     {
       document.body.style.backgroundColor="red";
       window.setInterval(changeColor(), 1000);
+      window.location.href="./?alt=alt";
     }
 };
 
