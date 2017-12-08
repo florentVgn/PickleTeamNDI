@@ -5,7 +5,7 @@
 
 <div id="title">
     <h1>Adopte un SAM<span class="beta">Le moyen sûr de rentrer après une soirée</span></h1>
-    <button class="dl" style="pointer-events: none">Créer un événement</button>
+    <button class="dl" style="pointer-events: none">THE PICKLE TEAM: les membres</button>
 </div>
 
 <div id="content">
