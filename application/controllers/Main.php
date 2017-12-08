@@ -91,10 +91,15 @@ class Main extends CI_Controller
     public function trouver_event(){
         $this->load->helper("form");
 
+        $this->load->model(['evenement_model', 'adresse_model']);
+
         $data['head']['seo']['title'] = "Adopte un SAM - Création d'un événement";
         $data['head']['seo']['description'] = "Créer un événement permettant aux personnes responsables de rentrer en sécurité";
         $data['head']['seo']['keywords'] = "soirée, sam, creer, événement";
         $data['head']['title'] = "Création d'un événement";
+
+        $data['lesVilles'] = $this->adresse_model->getAllVilles();
+        $data['lesEvents'] = $this->evenement_model->getAll();
 
         $this->load->view('trouver_event', $data);
     }
