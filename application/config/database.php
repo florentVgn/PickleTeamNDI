@@ -77,7 +77,7 @@ $db['default'] = array(
     'dsn'	=> 'mysql:host=localhost;dbname=db_pickleteam',
     'hostname' => 'localhost',
     'username' => 'root',
-    'password' => 'root',
+    'password' => '242htl8J3003',
     'database' => 'db_pickleteam',
     'dbdriver' => 'pdo',
     'dbprefix' => '',
