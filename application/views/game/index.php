@@ -83,7 +83,7 @@
 	<header></header>
 	<div class="score"></div>
 	<div class="main">
-		<button class="play"><b>CLICK</b> TO PLAY</button>
+		<button class="play"><b>CLIQUEZ</b> POUR JOUER</button>
 	</div>
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>	
 	<script type="text/javascript">

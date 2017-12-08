@@ -7,5 +7,3 @@
 	<a class="menu" href="<?= base_url('test-de-reactivite'); ?>">Test de réactivité</a>
 	<a class="menu" href="<?= base_url('notre-equipe'); ?>">L'équipe</a>
 </header>
-
-<div class="carroussel"><!-- Dynamic Content --></div>

@@ -252,10 +252,12 @@ p.intro{
 	opacity:0.4;
 }
 
-article button{
+article button,
+.article-btn {
 	width:35%;
 	padding:4px;
 	margin-right:0px;
+	outline: 0;
 	padding-top:8px;
 	padding-bottom:8px;
 	border:solid 0px;
@@ -265,6 +267,11 @@ article button{
 
 	display:inline-block;
 	font-family:'Montserrat', sans-serif;
+}
+
+article button:hover,
+.article-btn:hover {
+	background-color:#d27a22;
 }
 
 article button.share{
@@ -412,4 +419,36 @@ button:hover{
 #imgTeam{
 	margin: auto;
 	width: 100%;
+}
+
+.carroussel{
+	width:100%;
+	padding:2%;
+	text-align:center;
+	font-family:'Montserrat', sans-serif;
+	color:white;
+
+	background-color:#141414;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.mainArticle{
+	width:100%;
+	padding:2%;
+	text-align:justify;
+	font-family:'Montserrat', sans-serif;
+	color:rgba(20,20,20,0.8);
+}
+
+h3{
+	width:100%;
+	text-align:left;
+
+	margin-bottom:3px;
+	margin-top:3px;
+}
+
+.mainArticle:first-letter{
+	font-size:1.2em;
 }

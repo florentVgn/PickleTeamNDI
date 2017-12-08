@@ -17,7 +17,7 @@
 			<?= form_label("Ville de l'événement", "ville_event", ['class' => "col-md-12 control-label"]) ?>
 			<select name="ville_event" class="form-control select2" onchange="submit()">
 				<?php foreach($lesVilles as $v): ?>
-					<option value="<?= $v->ville ?>"><?= $v->ville ?></option>
+					<option name="ville" <?= (isset($_POST['ville']) && $_POST['ville'] == $v->ville) ? 'required="required"' : ""  ?> value="<?= $v->ville ?>"><?= $v->ville ?></option>
 				<?php endforeach ?>
 			</select>
 		</div>
