@@ -4,11 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Evenement_model extends CI_Model{
 
 
-    protected $table = "adresse";
+    protected $table = "evenement";
 
     public function insert($eventData)
     {
         return $this->db->insert($this->table, $eventData);
+        return $this->db->insert_id();
     }
 
     public function get($id)

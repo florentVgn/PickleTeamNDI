@@ -10,6 +10,12 @@
 <div id="content">
 	<div id="main">
 
+		<?php if($this->session->flashdata('event_success') == "success"): ?>
+			<div class="alert-success col-md-12 col-xs-12">
+				Votre événement a bien été créé. Le code d'accès pour pouvoir le modifier plus tard si besoin est: <?= $code_access ?>
+			</div>
+		<?php endif; ?>
+
 		<?= form_open('creer-un-evenement', ['class' => "form-vertical"]); ?>
 
 
