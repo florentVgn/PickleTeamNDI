@@ -21,7 +21,12 @@
                 Le principe est simple :
                 Les personnes participent à un événement.
                 Les événements sont référencés, et il est possible de créer des trajets à partir de ces derniers.
-                
+                Les trajets ont chacun une destination, et chacun peut le rejoindre tant qu'il y a de la place à bord !
+
+                A long terme :
+                On imagine un partenariat avec les entreprises spécialisées dans l'événementiel.
+                Afin de rendre l'application utile au plus grand nombre.
+
 
 
             </pre
