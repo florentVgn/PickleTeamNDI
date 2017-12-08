@@ -11,13 +11,20 @@ class Main extends CI_Controller
         $this->load->view('accueil', $data);
     }
 
-    public function proposer_trajet(){
+    public function proposer_trajet($gameWin = null){
         $data['head']['seo']['title'] = "Adopte un SAM by THE PICKLE TEAM";
         $data['head']['seo']['description'] = "Le moyen sûr de rentrer après une soirée";
         $data['head']['seo']['keywords'] = "soirée, sam";
         $data['head']['title'] = "Accueil";
 
-        $this->load->view('proposer_trajet', $data);
+        if(is_null($gameWin))
+		{
+			$this->load->view('game/index');
+		}
+		else
+		{
+			$this->load->view('proposer_trajet', $data);
+		}
     }
 
     public function creer_event(){
