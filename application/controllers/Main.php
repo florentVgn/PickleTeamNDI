@@ -99,6 +99,15 @@ class Main extends CI_Controller
         $this->load->view('trouver_event', $data);
     }
 
+    public function test_reactivite(){
+        $data['head']['seo']['title'] = "Adopte un SAM - Test de réactivité";
+        $data['head']['seo']['description'] = "Test de réactivité pour savoir si oui ou non vous êtes en état de conduire.";
+        $data['head']['seo']['keywords'] = "soirée, sam, creer, événement";
+        $data['head']['title'] = "Test de réactivité";
+
+        $this->load->view("game/index", $data);
+    }
+
     public function test(){
         $dataMail = array(
             'qrCode' => 'event-1',

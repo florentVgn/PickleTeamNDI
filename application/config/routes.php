@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['creer-un-evenement'] = 'Main/creer_event';
 $route['trouver-un-evenement'] = 'Main/trouver_event';
+$route['test-de-reactivite'] = 'Main/test_reactivite';
