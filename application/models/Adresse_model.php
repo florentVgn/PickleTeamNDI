@@ -17,6 +17,11 @@ class Adresse_model extends CI_Model{
         return $this->db->get_where($this->table,array('id'=>$id));
     }
 
+    public function getAllVilles()
+    {
+        return $this->db->select("ville")->group_by("ville")->get($this->table)->result();
+    }
+
     public function update($champs,$donnee)
     {
         return $this->db->set($donnee)

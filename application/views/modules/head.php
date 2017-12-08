@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/bootstrap-theme.min.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/jquery-ui.css') ?>">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/styleChat.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?= $style ?>">
 	<link rel="stylesheet" type="text/css" media="screen and (min-width: 320px) and (max-width: 1339px)" href="<?= base_url('/assets/css/styleLow.css') ?>" />
 	<title><?= $title ?></title>

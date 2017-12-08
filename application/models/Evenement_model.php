@@ -14,12 +14,12 @@ class Evenement_model extends CI_Model{
 
     public function get($id)
     {
-        return $this->db->get_where($this->table,array('id'=>$id))->row();
+        return $this->db->join("adresse", 'evenement.id_adresse = adresse.id_adresse')->get_where($this->table,array('id'=>$id))->row();
     }
 
     public function getAll()
     {
-        return $this->db->get($this->table)->results();
+        return $this->db->select("*")->join("adresse", 'evenement.id_adresse = adresse.id_adresse')->get($this->table)->result();
     }
 
     public function update($champs,$donnee)

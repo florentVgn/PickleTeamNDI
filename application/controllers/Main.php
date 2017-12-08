@@ -13,13 +13,20 @@ class Main extends CI_Controller
         $this->load->view('accueil', $data);
     }
 
-    public function proposer_trajet(){
+    public function proposer_trajet($gameWin = null){
         $data['head']['seo']['title'] = "Adopte un SAM by THE PICKLE TEAM";
         $data['head']['seo']['description'] = "Le moyen sûr de rentrer après une soirée";
         $data['head']['seo']['keywords'] = "soirée, sam";
         $data['head']['title'] = "Accueil";
 
-        $this->load->view('proposer_trajet', $data);
+        if(is_null($gameWin))
+		{
+			$this->load->view('game/index');
+		}
+		else
+		{
+			$this->load->view('proposer_trajet', $data);
+		}
     }
 
     public function creer_event(){
@@ -93,10 +100,15 @@ class Main extends CI_Controller
     public function trouver_event(){
         $this->load->helper("form");
 
+        $this->load->model(['evenement_model', 'adresse_model']);
+
         $data['head']['seo']['title'] = "Adopte un SAM - Création d'un événement";
         $data['head']['seo']['description'] = "Créer un événement permettant aux personnes responsables de rentrer en sécurité";
         $data['head']['seo']['keywords'] = "soirée, sam, creer, événement";
         $data['head']['title'] = "Création d'un événement";
+
+        $data['lesVilles'] = $this->adresse_model->getAllVilles();
+        $data['lesEvents'] = $this->evenement_model->getAll();
 
         $this->load->view('trouver_event', $data);
     }

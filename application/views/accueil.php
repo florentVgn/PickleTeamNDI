@@ -6,28 +6,33 @@
 		<button class="dl">Trouver un covoiturage dès maintenant !</button>
 	</div>
 	<div id="content">
-		<div id="main">
-			<article class="first">
-				<input class="recherche" placeholder="Lieu de départ ?">
-				<button class="join">Envoyer</button>
-			</article>
-			<article>
-				<h2>Départ dans 15 minutes<span class="date">proposé par Axelle</span></h2>
-				<p>Départ : SEVEN DISCOTHEQUE <br> Arrivée : IUT VALENCE<br>Véhicule: FERRARI</p>
-				<button class="join">Rejoindre</button>
-			</article>
-			<article>
-				<h2>Départ dans 15 minutes<span class="date">proposé par Axelle</span></h2>
-				<p>Départ : SEVEN DISCOTHEQUE <br> Arrivée : IUT VALENCE<br>Véhicule: FERRARI</p>
-				<button class="join">Rejoindre</button>
-			</article>
-		</div>
-		<div id="who">
-			<article>
-				<h2>Trouvez un véhicule facilement</h2>
-				<button class="join big">Scanner un QR CODE</button>
-			</article>
-		</div>
+        <div id="main">
+        <h2>Qui sommes-nous ?</h2>
+            <pre>
+                Nous avons développé cette application web dans le cadre de la Nuit de l'Info 2017.
+                l'objectif est simple :
+                Nous savons que les jeunes sont les plus touchés par les accidents de la route.
+                L'un des plus gros facteur de mortalité est la consommation d'alcool avant de prendre le volant.
+
+                Ainsi, nous avons décidé d'apporter une solution innovante pour résoudre ce problème.
+                Notre application met directement en relation les personnes qui jouent le rôle de sam,
+                à ceux qui en ont besoin d'un.
+
+                Le principe est simple :
+                Les personnes participent à un événement.
+                Les événements sont référencés, et il est possible de créer des trajets à partir de ces derniers.
+                Les trajets ont chacun une destination, et chacun peut le rejoindre tant qu'il y a de la place à bord !
+
+                A long terme :
+                On imagine un partenariat avec les entreprises spécialisées dans l'événementiel.
+                Afin de rendre l'application utile au plus grand nombre.
+
+
+
+            </pre
+        </div>
+    </div>
+
 	</div>
 
 <?php $this->load->view("modules/footer"); ?>
