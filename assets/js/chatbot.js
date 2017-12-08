@@ -339,6 +339,11 @@ $('#chatHeader').on('click', function(){
 		}, 300, function() {
 					  	// Load content //
 					  });
+
+		$('.chatPrev').animate({
+			bottom: '13px'
+		}, 300, function() {
+		});
 	}
 	else{
 		$(this).html('Cliquez pour ouvrir le chat');
@@ -348,6 +353,11 @@ $('#chatHeader').on('click', function(){
 		}, 300, function() {
 					  	// Load content //
 					  });
+
+		$('.chatPrev').animate({
+			bottom: '-180px'
+		}, 300, function() {
+		});
 	}
 
 });
