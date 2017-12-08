@@ -11,14 +11,13 @@ window.onkeyup = function(e) {
     if(lastTwenty == konami_code)
     {
       document.body.style.backgroundColor="red";
-      window.setInterval(changeColor(), 1000);
-      window.location.href="./?alt=alt";
+      window.setInterval(changeColor(), 100);
     }
 };
 
 function changeColor() {
-  if(document.body.style.backgroundColor=="red")
-      document.body.style.backgroundColor="blue";
-  else
-      document.body.style.backgroundColor="red";
+    if(document.body.style.backgroundColor=="red" || document.body.style.backgroundColor=="green")
+        document.body.style.backgroundColor="blue";
+    else
+        document.body.style.backgroundColor="green";
 }
