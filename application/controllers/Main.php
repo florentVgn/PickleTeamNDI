@@ -1,4 +1,4 @@
-<?php
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main extends CI_Controller
 {
@@ -30,6 +30,8 @@ class Main extends CI_Controller
 
         if($this->form_validation->run()) {
 
+            var_dump(base_url());
+
             var_dump($this->input->post());die;
 
             $this->load->model(['evenement_model', 'adresse_model']);
@@ -54,6 +56,21 @@ class Main extends CI_Controller
             $this->evenement_model->insert($newEvent);
 
             // envoi du mail et affichage retour success du code;
+            // GENERATION QR CODE
+            $mailPHP = new PHPMailer;
+            $mailPHP->isHTML(true);
+            $mailPHP->CharSet = 'UTF-8';
+            $mailPHP->setFrom("noreply@adopteunsam.com","AdopteUnSAM");
+            $mailPHP->addAddress($this->input->post("mail"));
+            $mailPHP->Subject = 'Confirmation de la création de votre événement';  
+
+            $mailPHP->Body = $this->load->view("mail_event", $newEvent);
+
+            if($mailPHP->send()){
+                $this->session->set_flashdata("mail_contact", "success");
+            } else {
+                $this->session->set_flashdata("mail_contact", "failure");
+            }
 
 
         } else {
@@ -61,9 +78,37 @@ class Main extends CI_Controller
         }
     }
 
+    public function trouver_event(){
+        $this->load->helper("form");
+        
+        $data['head']['seo']['title'] = "Adopte un SAM - Création d'un événement";
+        $data['head']['seo']['description'] = "Créer un événement permettant aux personnes responsables de rentrer en sécurité";
+        $data['head']['seo']['keywords'] = "soirée, sam, creer, événement";
+        $data['head']['title'] = "Création d'un événement";
+
+        $this->load->view('trouver_event', $data);
+    }
+
     public function test(){
-        $this->load->model('user_model');
-        var_dump($this->user_model->get(0)->id);
-        die;
+        $newEvent = array(
+            'nom' => "CONCERT A L'OASIS",
+            'date' => DateTime::createFromFormat("d/m/Y", "27/10/2017")->format("Y-m-d"),
+            'adresse' => 1,
+            'code_acces' => strtoupper(substr(md5(microtime()),rand(0,26),5))
+        );
+        $this->load->view('code_acces', $data);
+
+    }
+
+    public function my404(){
+        $data['head']['seo']['title'] = "Adopte un SAM - Erreur 404";
+        $data['head']['seo']['description'] = "Une erreur 404 a surgi.";
+        $data['head']['seo']['keywords'] = "";
+        $data['head']['title'] = "Erreur 404";
+
+        $data["menu"]["active"] = "none";
+
+        $this->output->set_status_header('404'); 
+        $this->load->view('modules/404', $data);
     }
 }

@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed'); 
 
 class Inscrits_Trajet_model extends CI_Model{
 

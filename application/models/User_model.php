@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: guillaume
- * Date: 07/12/17
- * Time: 21:23
- */
+defined('BASEPATH') OR exit('No direct script access allowed'); 
 
 class User_model extends CI_Model
 {
