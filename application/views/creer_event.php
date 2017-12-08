@@ -1,3 +1,5 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
 <?php $this->load->view("modules/head", $head); ?>
 <?php $this->load->view("modules/menu"); ?>
 
