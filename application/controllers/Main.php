@@ -121,6 +121,15 @@ class Main extends CI_Controller
 
     }
 
+    public function equipe(){
+        $data['head']['seo']['title'] = "La pickle team";
+        $data['head']['seo']['description'] = "Notre équipe";
+        $data['head']['seo']['keywords'] = "soirée, sam, equipe";
+        $data['head']['title'] = "La pickle team";
+
+        $this->load->view('equipe', $data);
+    }
+
     public function my404(){
         $data['head']['seo']['title'] = "Adopte un SAM - Erreur 404";
         $data['head']['seo']['description'] = "Une erreur 404 a surgi.";
