@@ -355,7 +355,7 @@ $('#chatHeader').on('click', function(){
 					  });
 
 		$('.chatPrev').animate({
-			bottom: '-250px'n
+			bottom: '-250px'
 		}, 300, function() {
 		});
 	}
