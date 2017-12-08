@@ -5,10 +5,9 @@ class Evenement_model extends CI_Model{
 
     protected $table = "adresse";
 
-    public function create($EvenementInfos)
+    public function insert($eventData)
     {
-        return $this->db->set($EvenementInfos)
-                         ->insert($this->table);
+        return $this->db->insert($this->table, $eventData);
     }
 
     public function get($id)
@@ -24,14 +23,14 @@ class Evenement_model extends CI_Model{
     public function update($champs,$donnee)
     {
         return $this->db->set($donnee)
-                        ->where($champs)
-                        ->update($this->table);
+        ->where($champs)
+        ->update($this->table);
     }
 
     public function delete($id)
     {
         return $this->db->where($id)
-                        ->delete($this->table);
+        ->delete($this->table);
     }
 
 

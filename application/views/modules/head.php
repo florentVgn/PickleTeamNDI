@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>	
-	<script src="http://perriermathis.fr/api/jquery-ui.min.js"></script>
-
 	<meta name="title" content="<?= $seo['title'] ?>" />
 	<meta name="description" content="<?= $seo['description'] ?>" />
 	<meta name="keywords" content="<?= $seo['keywords'] ?>" />
 
+	<link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/bootstrap.min.css') ?>">
+	<link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/bootstrap-theme.min.css') ?>">
+	<link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/jquery-ui.css') ?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('/assets/css/style.css') ?>">
 	<link rel="stylesheet" type="text/css" media="screen and (min-width: 320px) and (max-width: 1339px)" href="<?= base_url('/assets/css/styleLow.css') ?>" />
 	<title><?= $title ?></title>
