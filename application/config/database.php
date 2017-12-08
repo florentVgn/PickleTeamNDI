@@ -74,10 +74,10 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-    'dsn'	=> 'mysql:host=localhost;dbname=db_pickleTeam',
+    'dsn'	=> 'mysql:host=localhost;dbname=db_pickleteam',
     'hostname' => 'localhost',
     'username' => 'root',
-    'password' => '242htl8J3003',
+    'password' => 'root',
     'database' => 'db_pickleteam',
     'dbdriver' => 'pdo',
     'dbprefix' => '',
