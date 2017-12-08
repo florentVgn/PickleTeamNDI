@@ -87,8 +87,8 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>	
 	<script type="text/javascript">
-		// Constantes
 
+		// Constantes
 		var largeur = $(document).width()-1;
 		var longeur = $(document).height()-1;
 
@@ -265,21 +265,23 @@
 			player.render();
 			itemToAppend.render();
 			
-			if(player.vies > 0 && player.score <= 20){
+			if(player.vies > 0 && player.score < 10){
 				setTimeout(play, player.speed);
 			}
 			else{
 				$('.main').html('');
 				window.clearInterval(decrementPlayerSpeed);
-				if(player.score >= 20){
+				if(player.score >= 10){
 					reactTime = player.getReactTime();
 					if(reactTime <= 0.9)
 						alert('Vous semblez en pleine forme! ;)');
 					else if(reactTime > 0.9)
 						alert('Vous êtes en forme mais vous pouvez mieux faire! :)');
+					window.location.replace("/main/proposer_trajet/winGame")
 				}
 				else{
 					alert('Vous semblez fatigué.. Ne devriez vous pas faire une pause?');
+					window.location.replace("/main/proposer_trajet")
 				}
 			}
 		} 
