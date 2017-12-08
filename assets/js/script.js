@@ -1,5 +1,7 @@
 $(function() {
 
+	$( ".select2" ).select2();
+
 	$( ".datepicker" ).datepicker({
 		altField: "#datepicker",
 		closeText: 'Fermer',

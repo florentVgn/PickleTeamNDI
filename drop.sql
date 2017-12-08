@@ -1,7 +1,6 @@
-DROP TABLE InscritTrajet CASCADE;
-DROP TABLE Trajet CASCADE;
-DROP TABLE Evenement CASCADE;
-DROP TABLE Etablissement CASCADE;
-DROP TABLE Utilisateur CASCADE;
-DROP TABLE Adresse CASCADE;
+DROP TABLE InscritTrajet;
+DROP TABLE Trajet;
+DROP TABLE Evenement;
+DROP TABLE Utilisateur;
+DROP TABLE Adresse;
 

@@ -21,8 +21,9 @@ class Main extends CI_Controller
     }
 
     public function creer_event(){
+
         $this->load->helper("form");
-        $this->load->library("form_validation");
+        $this->load->library(["form_validation", 'session']);
         $data['head']['seo']['title'] = "Adopte un SAM - Création d'un événement";
         $data['head']['seo']['description'] = "Créer un événement permettant aux personnes responsables de rentrer en sécurité";
         $data['head']['seo']['keywords'] = "soirée, sam, creer, événement";
@@ -30,14 +31,10 @@ class Main extends CI_Controller
 
         if($this->form_validation->run()) {
 
-            var_dump(base_url());
-
-            var_dump($this->input->post());die;
-
             $this->load->model(['evenement_model', 'adresse_model']);
 
             $newAdresse = array( 
-                'rue' => $this->input->post("rue_adresse_event"),
+                'adresse' => $this->input->post("rue_adresse_event"),
                 'cp' => $this->input->post("cp_adresse_event"),
                 'ville' => $this->input->post("ville_adresse_event")
             );
@@ -48,15 +45,26 @@ class Main extends CI_Controller
 
             $newEvent = array(
                 'nom' => $this->input->post("nom_event"),
-                'date' => DateTime::createFromFormat("d/m/Y", $this->input->post("date_event"))->format("Y-m-d"),
-                'adresse' => $idAdresse,
-                'code_acces' => $code_acces
+                'date_deb' => DateTime::createFromFormat("d/m/Y", $this->input->post("date_event"))->format("Y-m-d"),
+                'id_adresse' => $idAdresse,
+                'code_modif' => $code_acces
             );
 
-            $this->evenement_model->insert($newEvent);
+            $idEvent = $this->evenement_model->insert($newEvent);
 
-            // envoi du mail et affichage retour success du code;
-            // GENERATION QR CODE
+            $this->load->helper("qr_code_helper");
+            generate_qrc(base_url("/evenement/".$idEvent), "event-".$idEvent);
+
+            $this->load->library('My_PHPMailer');
+
+            $dataMail = array(
+                'qrCode' => 'event-'.$idEvent,
+                'nom' => $newEvent['nom'],
+                'idEvent' => $idEvent,
+                'date_deb' => $this->input->post("date_event"),
+                'code_modif' => $newEvent['code_modif'],
+            );
+
             $mailPHP = new PHPMailer;
             $mailPHP->isHTML(true);
             $mailPHP->CharSet = 'UTF-8';
@@ -64,14 +72,16 @@ class Main extends CI_Controller
             $mailPHP->addAddress($this->input->post("mail"));
             $mailPHP->Subject = 'Confirmation de la création de votre événement';  
 
-            $mailPHP->Body = $this->load->view("mail_event", $newEvent);
+            $mailPHP->Body = $this->load->view("mail_event", $dataMail, TRUE);
 
-            if($mailPHP->send()){
-                $this->session->set_flashdata("mail_contact", "success");
-            } else {
-                $this->session->set_flashdata("mail_contact", "failure");
-            }
+            $this->session->set_flashdata("event_success", "success");
 
+            $newdata['head']['seo']['title'] = "Adopte un SAM - Création d'un événement";
+            $newdata['head']['seo']['description'] = "Créer un événement permettant aux personnes responsables de rentrer en sécurité";
+            $newdata['head']['seo']['keywords'] = "soirée, sam, creer, événement";
+            $newdata['head']['title'] = "Création d'un événement";
+            $newdata['code_access'] = $code_acces;
+            $this->load->view('creer_event', $newdata);
 
         } else {
             $this->load->view('creer_event', $data);
@@ -80,7 +90,7 @@ class Main extends CI_Controller
 
     public function trouver_event(){
         $this->load->helper("form");
-        
+
         $data['head']['seo']['title'] = "Adopte un SAM - Création d'un événement";
         $data['head']['seo']['description'] = "Créer un événement permettant aux personnes responsables de rentrer en sécurité";
         $data['head']['seo']['keywords'] = "soirée, sam, creer, événement";
@@ -90,13 +100,15 @@ class Main extends CI_Controller
     }
 
     public function test(){
-        $newEvent = array(
-            'nom' => "CONCERT A L'OASIS",
-            'date' => DateTime::createFromFormat("d/m/Y", "27/10/2017")->format("Y-m-d"),
-            'adresse' => 1,
-            'code_acces' => strtoupper(substr(md5(microtime()),rand(0,26),5))
+        $dataMail = array(
+            'qrCode' => 'event-1',
+            'nom' => "Nuit de l'info",
+            'idEvent' => "1",
+            'date' => '17/02/2017',
+            'code_modif' => 'E45DZE',
         );
-        $this->load->view('code_acces', $data);
+
+        $this->load->view('mail_event', $dataMail);
 
     }
 
