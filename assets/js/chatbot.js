@@ -341,7 +341,7 @@ $('#chatHeader').on('click', function(){
 					  });
 
 		$('.chatPrev').animate({
-			bottom: '13px'
+			visibility: visible
 		}, 300, function() {
 		});
 	}
@@ -355,7 +355,7 @@ $('#chatHeader').on('click', function(){
 					  });
 
 		$('.chatPrev').animate({
-			bottom: '-180px'
+			visibility: hidden
 		}, 300, function() {
 		});
 	}

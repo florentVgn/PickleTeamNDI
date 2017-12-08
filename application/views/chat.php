@@ -1,7 +1,7 @@
 		<div id="chat">
 			<div id="chatHeader">Cliquez pour ouvrir le chat</div>
 			<div id="chatContent">
-				<div class="bulle"><p class="author sender">BOT</p><p class="message sender">Bonjour, veuillez poser vos questions ici !</p></div>
+				<div class="bulle"><p class="author sender">BOT</p><p class="message sender">Bonjour, veuillez poser vos questions ici ! Utilisez @nomRecherche pour utiliser le chatbot</p></div>
 				<div class="barre"></div>
 			</div>
 			<div class="input">
