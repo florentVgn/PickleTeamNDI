@@ -408,3 +408,8 @@ button:hover{
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
+
+#imgTeam{
+	margin: auto;
+	width: 100%;
+}
