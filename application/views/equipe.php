@@ -10,7 +10,7 @@
 
 <div id="content">
     <div id="main">
-        <img src="<?php echo base_url().'assets/img/imageTeam.jpg' ?>" alt="image equipe">
+        <img id="imgTeam" src="<?php echo base_url().'assets/img/imageTeam.jpg' ?>" alt="image equipe">
        <table>
            <tr><td>
                    <h3>Mathis Perrier<br>'Thismarin'</h3>
